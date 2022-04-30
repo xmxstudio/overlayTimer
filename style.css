@@ -1,0 +1,219 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body,
+html {
+  height: 100%;
+  font-family: monospace;
+  /* background: url('https://picsum.photos/1920/1080') */
+  /* background-color: #777; */
+  /* //make transparent before pushing */
+}
+
+#timer {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 8px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px rgba(0, 0, 0, 0.25), 0 0 rgba(255, 255, 255, 0.25);
+  /* box-shadow: inset 0 0 80px 5px rgba(255,255,255,0.25); */
+  background-color: rgba(0, 0, 0, 0.75);
+  border-bottom-left-radius: 10px;
+}
+
+
+#timer2 {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 5px 8px;
+  font-weight: bold;
+  color: rgba(255, 255, 255, 0.85);
+  text-shadow: 0 2px rgba(0, 0, 0, 0.25), 0 0 rgba(255, 255, 255, 0.25);
+  background-color: rgba(0, 0, 0, 0.75);
+  border-bottom-right-radius: 10px;
+}
+#ascdesc {
+  display: block;
+  /* border: solid 1px red; */
+  /* font-size: 0.75em; */
+  text-align: center;
+}
+
+#info {
+  display: inline-block;
+  margin-right: 5px;
+  /* width: 150px; */
+  font-size: 3em
+}
+
+#timerhelp {
+  display: block;
+  position: fixed;
+  top: -100%;
+  left: 0;
+  right: 0;
+  /* font-size: 0.3em; */
+  padding: 20px;
+  font-family: sans-serif;
+  color: #fff;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+#timerhelp p {
+  display: block;
+  padding: 5px;
+}
+
+#timerhelp li {
+  list-style-type: none;
+  margin: 0 6px;
+}
+
+#timerhelp strong {
+  color: #0041ce;
+}
+
+/* .smaller{  font-size: 0.35em} */
+i::before {
+  margin-right: 4px;
+}
+.buzzer{
+  transform-origin: 44% 58%;
+  animation: alarm 0.5s linear infinite;
+  animation-iteration-count:  228;
+}
+
+.timerG {
+  color: rgba(0, 255, 0, 0.15)
+}
+.timerR {
+  color: rgba(255, 0, 0, 0.15);
+}
+#stopwatch::before {
+  font-size: 2.5em
+}
+.showHelp {
+  animation: displayHelp 10s;
+}
+.showAbout {
+  animation: diplayAbout 10s;
+}
+#customDiv{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  height: 100px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: rgba(0,0,0,0.75);
+  color: #fff;
+  transition: all 0.5s;
+  transform: translate(-50% , -50%);
+  
+}
+.showCustomDiv{
+  left: 50%;
+  top: 50%;
+}
+.bodyflash{
+  animation: screenFlash 0.5s infinite;
+}
+@keyframes alarm {
+  0%{
+    transform: rotate(0deg);
+  }
+  25%{
+    transform: rotate(-20deg);
+  }
+  75%{
+    transform: rotate(20deg);
+  }
+  
+  100%{
+    transform: rotate(0deg);
+  }
+}
+@keyframes displayHelp {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  10% {
+    top: 0;
+    opacity: 1;
+  }
+
+  90% {
+    top: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
+@keyframes displayAbout {
+  0% {
+    top: -100%;
+    opacity: 0;
+  }
+
+  10% {
+    top: 0;
+    opacity: 1;
+  }
+
+  90% {
+    top: 0;
+    opacity: 1;
+  }
+
+  100% {
+    top: -100%;
+    opacity: 0;
+  }
+}
+@keyframes screenFlash {
+  0% {
+    box-shadow: inset 0 0 300px 200px #ff0
+  }
+
+  10% {
+    box-shadow: inset 0 0 200px 60px #0f0
+  }
+
+  20% {
+    box-shadow: inset 0 0 500px 150px #0ff
+  }
+
+  30% {
+    box-shadow: inset 0 0 10px 400px #00f
+  }
+
+  40% {
+    box-shadow: inset 0 0 340px 150px #fff
+  }
+  60% {
+    box-shadow: inset 0 0 500px 22px #f00
+  }
+  90% {
+    box-shadow: inset 0 0 780px 100px #fff
+  }
+
+  100% {
+    box-shadow: inset 0 0 200px 100px rgba(0, 0, 0, 0)
+  }
+}
